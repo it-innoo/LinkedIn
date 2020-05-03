@@ -9,7 +9,7 @@ jobs:
       - run:
           name: Run Tests
           command: |
-            kcov --include-path=./codecov coverage/
+            kcov --include-path=./target/my_reports .target/my-reports/codecov
       - run:
           name: Upload Codecov
           command: |
