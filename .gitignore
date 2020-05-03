@@ -1,0 +1,14 @@
+nbproject/private/
+build/
+nbbuild/
+dist/
+target/
+.settings/
+.classpath
+.project
+nbdist/
+nbactions.xml
+nb-configuration.xml
+
+*.db
+/nbproject/
