@@ -5,11 +5,10 @@ jobs:
     docker:
       - image: particleflux/circleci-bats-kcov:1.0.0
     steps:
-      - checkout
       - run:
           name: Run Tests
           command: |
-            kcov --include-path=./target/ ./target/my-reports/ ./target/my-reports/index.html
+            kcov --include-path=target/ target/my-reports/ target/my-reports/index.html
       - run:
           name: Upload Codecov
           command: |
