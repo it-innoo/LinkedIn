@@ -23,6 +23,6 @@ public class DefaultControllerTest {
     public void testHelloWorld() throws Exception {
         mvc.perform(get("/")
                 .contentType(MediaType.TEXT_HTML))
-                .andExpect(status().is4xxClientError());
+                .andExpect(status().isOk());
     }
 }
