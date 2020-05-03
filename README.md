@@ -10,5 +10,6 @@ Ohjelmointiprojekti, jossa luodaan ansioluettelo- ja työntekijähakusovellus el
 
 <a href="https://codeclimate.com/github/it-innoo/linkedin/maintainability"><img src="https://api.codeclimate.com/v1/badges/ed133446a76af6d4dc6c/maintainability" /></a>
 
+![Java CI](https://github.com/it-innoo/linkedin/workflows/Java%20CI/badge.svg)
 ![Maven Package](https://github.com/it-innoo/linkedin/workflows/Maven%20Package/badge.svg)
 
