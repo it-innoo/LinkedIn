@@ -33,7 +33,7 @@ jobs:
             token: ${{secrets.CODECOV_TOKEN}}
             flags: unittest
             name: codecov-1
-
+      - name: Packaging workflow data as artifacts
       - run: mkdir staging && cp target/*.jar staging
       - uses: actions/upload-artifact@v1
         with:
