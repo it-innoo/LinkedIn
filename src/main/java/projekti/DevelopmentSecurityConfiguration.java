@@ -30,29 +30,24 @@ public class DevelopmentSecurityConfiguration extends WebSecurityConfigurerAdapt
         http.csrf()
                 .ignoringAntMatchers("/h2-console/**");
         http.headers()
+                .cacheControl().disable()
                 .frameOptions()
                 .sameOrigin();
         http.authorizeRequests()
                 .antMatchers("/h2-console/**").permitAll()
                 .antMatchers("/registration").permitAll()
+                .antMatchers("/css/**").permitAll()
                 .anyRequest().authenticated();
         http.formLogin()
+                .loginPage("/login")
+                .loginProcessingUrl("/login")
                 .permitAll();
-                //.loginPage("login");
-        http.logout().permitAll();
+        http.logout()
+                .permitAll()
+                .invalidateHttpSession(true)
+                .deleteCookies("JSESSIONID");
     }
 
-    /*
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
-                .withUser("jukka").password(passwordEncoder().encode("salainen")).roles("USER")
-                .and()
-                .withUser("ukko").password(passwordEncoder().encode("salainen")).roles("USER")
-                .and()
-                .withUser("admin").password(passwordEncoder().encode("sekret")).roles("ADMIN");
-    }
-     */
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());

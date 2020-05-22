@@ -2,11 +2,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8" />
-        <title>Hello world</title>
+        <title>Wepa LinkedIn</title>
     </head>
     <body>
-
-        <h1 th:text="${'Hello ' + message}">Hello world</h1>
+        <header>
+            <h1>Welcome to Wepa LinkedIn</h1>
+        </header>
+        <nav>
+            <a href="/html/">HTML</a> |
+            <a href="/css/">CSS</a> |
+            <a href="/js/">JavaScript</a> |
+            <a href="#" th:href="@{/logout}">Logout</a>
+        </nav> 
+        
 
 
     </body>

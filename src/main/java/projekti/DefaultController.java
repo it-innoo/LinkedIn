@@ -31,10 +31,6 @@ public class DefaultController {
                     passwordEncoder.encode("salainen"),
                     passwordEncoder.encode("salainen"),
                     "ihme ukko"));
-            /*
-            accountRepository.save(new Account("ukko", passwordEncoder.encode("salainen")));
-            accountRepository.save(new Account("jpa", passwordEncoder.encode("salainen")));
-*/
         }
     }
 
