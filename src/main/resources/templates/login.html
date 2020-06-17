@@ -8,19 +8,36 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
-        <link rel="stylesheet" th:href="@{/css/style.css}" />
+        <link rel="stylesheet" href="#" th:href="@{/css/style.css}" />
     </head>
     <body>
-            <form class="form-signin" method="post" action="#" th:action="@{/login}">
+            <form class="form-signin"
+                  method="post"
+                  action="#"
+                  th:action="@{/login}"
+                  th:object="${account}">
                 <h2 class="form-heading">Log in</h2>
 
                 <div class="form-group">
-                    <span th:if="${error}" th:text="${error}">No Error</span>
-                    <span th:if="${message}" th:text="${message}">No Error</span>
+                    <span class="alert alert-danger" role="alert" th:if="${error}" th:text="${error}">No Error</span>                    
+                    <span class="alert alert-success" role="alert" th:if="${message}" th:text="${message}">No Message</span>
 
-                    <input name="username" type="text" class="form-control" placeholder="Username"
+                    <input name="username"
+                           type="text"
+                           class="form-control"
+                           placeholder="Username"
+                           th:field="*{username}"
                            autofocus="true"/>
-                    <input name="password" type="password" class="form-control" placeholder="Password"/>
+                    <span
+                        th:if="${#fields.hasErrors('username')}"
+                        th:errors="*{username}">SSN Virheviesti
+                    </span>
+                    
+                    <input name="password"
+                           type="password"
+                           class="form-control"
+                            th:field="*{password}"
+                           placeholder="Password"/>
 
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
                     <h4 class="text-center">

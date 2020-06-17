@@ -21,16 +21,16 @@ public class DefaultController {
     @PostConstruct
     public void init() {
         if (accountRepository.count() == 0) {
-            accountRepository.save(new Account("admin",
-                    "admin",
+            accountRepository.save(new Account("Administrator",
+                    "root",
                     passwordEncoder.encode("sekret"),
                     passwordEncoder.encode("sekret"),
                     "admin"));
-            accountRepository.save(new Account("ukko",
-                    "Ukko",
+            accountRepository.save(new Account("Ihme Ukko",
+                    "ukko",
                     passwordEncoder.encode("salainen"),
                     passwordEncoder.encode("salainen"),
-                    "ihme ukko"));
+                    "ihme_ukko"));
         }
     }
 

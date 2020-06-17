@@ -2,10 +2,10 @@
 package projekti.model;
 
 import javax.persistence.Entity;
-import javax.persistence.Transient;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Entity
@@ -13,12 +13,10 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @AllArgsConstructor
 @Data
 public class Account extends AbstractPersistable<Long> {
-    private String name;
     private String username;
+    private String name;
     private String password;
     @Transient
-    private String passwordConfirm;
+    private String passwordconfirm;
     private String profilename;
-
-    // constructors / standard setters / getters
 }
