@@ -15,3 +15,7 @@ Ohjelmointiprojekti, jossa luodaan ansioluettelo- ja työntekijähakusovellus el
 
 ## Docker
 
+To start application run
+````
+docker run -p 8080:8080 hulluukko/wepa
+````
